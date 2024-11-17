@@ -1,7 +1,6 @@
+import image1 from '@/public/about-1.jpg';
 import { unstable_noStore as noStore } from 'next/cache';
 import Image from 'next/image';
-import image1 from '@/public/about-1.jpg';
-import image2 from '@/public/about-2.jpg';
 import { getCabins } from '../_lib/data-service';
 
 export const revalidate = 86400; // 24 hours in seconds
