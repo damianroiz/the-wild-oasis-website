@@ -1,5 +1,8 @@
 import { getCabin, getCabins } from '@/app/_lib/data-service';
 import Cabin from '@/app/_components/Cabin';
+import { Suspense } from 'react';
+import Reservation from '@/app/_components/Reservation';
+import Spinner from '@/app/_components/Spinner';
 
 // PLACEHOLDER DATA
 const cabin = {
@@ -32,10 +35,14 @@ export default async function Page({ params }) {
       <Cabin cabin={cabin} />
 
       <div>
-        <h2 className="text-5xl font-semibold text-center">
+        <h2 className="text-3xl font-semibold text-center mb-10 text-accent-400">
           Reserve {cabin.name} today. Pay on arrival.
         </h2>
       </div>
+
+      <Suspense fallback={<Spinner />}>
+        <Reservation cabin={cabin} />
+      </Suspense>
     </div>
   );
 }

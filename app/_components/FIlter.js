@@ -29,21 +29,21 @@ function Filter() {
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        2&mdash;3 guests
+        2&ndash;3 guests
       </Button>
       <Button
         filter="medium"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        4&mdash;7 guests
+        4&ndash;7 guests
       </Button>
       <Button
         filter="large"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        8&mdash;12 guests
+        8&ndash;12 guests
       </Button>
     </div>
   );
