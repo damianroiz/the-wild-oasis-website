@@ -14,6 +14,9 @@ const authConfig = {
       return !!auth?.user;
     },
     async signIn({ user, account, profile }) {
+      if (account.provider === 'google') {
+        return profile.email_verified && profile.email.endsWith('@google.com');
+      }
       try {
         const existingGuest = await getGuest(user.email);
 
