@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import CabinList from '@/app/_components/CabinList';
 import Spinner from '@/app/_components/Spinner';
-import Filter from '@/app/_components/Filter';
+import Filter from '../_components/Filter';
 import ReservationReminder from '@/app/_components/ReservationReminder';
 
 export const revalidate = 3600;
@@ -11,8 +11,8 @@ export const metadata = {
 };
 
 export default async function Page({ searchParams }) {
-  const params = await searchParams;
-  const filter = params?.capacity ?? 'all';
+  const filter = searchParams?.capacity ?? 'all';
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
