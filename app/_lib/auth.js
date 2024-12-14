@@ -1,6 +1,6 @@
-import NextAuth from 'next-auth';
-import Google from 'next-auth/providers/google';
-import { createGuest, getGuest } from './data-service';
+import NextAuth from "next-auth";
+import Google from "next-auth/providers/google";
+import { createGuest, getGuest } from "./data-service";
 
 const authConfig = {
   providers: [
@@ -14,9 +14,6 @@ const authConfig = {
       return !!auth?.user;
     },
     async signIn({ user, account, profile }) {
-      if (account.provider === 'google') {
-        return profile.email_verified && profile.email.endsWith('@google.com');
-      }
       try {
         const existingGuest = await getGuest(user.email);
 
@@ -35,7 +32,7 @@ const authConfig = {
     },
   },
   pages: {
-    signIn: '/login',
+    signIn: "/login",
   },
 };
 
