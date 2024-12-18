@@ -53,7 +53,7 @@ export async function createBooking(bookingData, formData) {
   redirect('/cabins/thankyou');
 }
 
-export async function deleteBooking(bookingId) {
+export async function deleteReservation(bookingId) {
   const session = await auth();
   if (!session) throw new Error('You must be logged in');
 
