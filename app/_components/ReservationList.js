@@ -5,7 +5,7 @@ import { deleteReservation } from '../_lib/actions';
 import { useOptimistic } from 'react';
 import DeleteReservation from './DeleteReservation';
 
-function ReservationList({ booking }) {
+function ReservationList({ bookings }) {
   const [optimisticBookings, optimisticDelete] = useOptimistic(
     bookings,
     (curBookings, bookingId) => {

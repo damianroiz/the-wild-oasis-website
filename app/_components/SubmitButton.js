@@ -3,7 +3,7 @@
 import { useFormStatus } from 'react-dom';
 
 export default function SubmitButton({ children, pendingLabel }) {
-  const { isPending } = useFormStatus();
+  const { pending } = useFormStatus();
 
   return (
     <button
